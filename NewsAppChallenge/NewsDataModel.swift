@@ -26,7 +26,7 @@ struct Article : Mappable{
     var source: Source?
     var author, title, description, url: String?
     var urlToImage: String?
-    var publishedAt: Date?
+    var publishedAt: String?
     init?(map: Map) {
         
     }

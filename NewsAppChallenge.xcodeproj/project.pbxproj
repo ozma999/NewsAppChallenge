@@ -77,8 +77,6 @@
 		8788A9A5213DC65400A6713E /* NewsAppChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				8788A9C6214038C200A6713E /* Slide.xib */,
-				8788A9C4214038B400A6713E /* Slide.swift */,
 				8788A9C021401E1200A6713E /* Model */,
 				8788A9BB214012A100A6713E /* views */,
 				8788A9B8213DCC3C00A6713E /* Controller */,
@@ -103,6 +101,8 @@
 		8788A9BB214012A100A6713E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8788A9C4214038B400A6713E /* Slide.swift */,
+				8788A9C6214038C200A6713E /* Slide.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";

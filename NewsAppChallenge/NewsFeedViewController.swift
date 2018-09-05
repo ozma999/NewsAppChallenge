@@ -9,6 +9,7 @@ import Alamofire
 import AlamofireObjectMapper
 import Foundation
 import UIKit
+import SDWebImage
 
 class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -26,6 +27,8 @@ class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
             self.setupSlideScrollView(news: articles)
             }
         }
+        self.view.backgroundColor = UIColor(red:0.09, green:0.10, blue:0.05, alpha:1.0)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,12 +76,14 @@ class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
 
         for i in 0 ..< news.count {
             let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
-
-//            slide.headerImage.image = UIImage(named: "ic_onboarding_1")
-            slide.titleLabel.text = news[i].title
+            slide.backgroundColor = UIColor(red:0.09, green:0.10, blue:0.05, alpha:1.0)
+            slide.headerImage.sd_setImage(with: URL(string:news[i].urlToImage! ), placeholderImage: UIImage(named: "placeholder.png"))
+                         slide.titleLabel.text = news[i].title
             slide.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-            print(slide.titleLabel.text)
-//            slide.dateLabel.text =  DateFormatter().string(from:  news[i].publishedAt!)
+            slide.dateLabel.text =  news[i].publishedAt!
+            slide.sourceLabel.text =  news[i].source?.name
+            slide.titleLabel.sizeToFit()
+
             
             slide.frame = CGRect(x: self.view.frame.width * CGFloat(i), y: 0, width: self.view.frame.width, height: self.view.frame.height)
             self.scrollView.addSubview(slide)
