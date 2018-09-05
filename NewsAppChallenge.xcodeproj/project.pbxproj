@@ -12,9 +12,12 @@
 		8788A9AC213DC65400A6713E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8788A9AA213DC65400A6713E /* Main.storyboard */; };
 		8788A9AE213DC65600A6713E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8788A9AD213DC65600A6713E /* Assets.xcassets */; };
 		8788A9B1213DC65600A6713E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8788A9AF213DC65600A6713E /* LaunchScreen.storyboard */; };
+		8788A9BA213DD27100A6713E /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8788A9B9213DD27100A6713E /* NewsFeedViewController.swift */; };
+		87BB1D40F7B635CA5DA1ED75 /* Pods_NewsAppChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79C5ADD400097176ABA6AE7 /* Pods_NewsAppChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49B0B54FD9307F7B1F0DC722 /* Pods-NewsAppChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsAppChallenge/Pods-NewsAppChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		8788A9A3213DC65400A6713E /* NewsAppChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsAppChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8788A9A6213DC65400A6713E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8788A9A8213DC65400A6713E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		8788A9AD213DC65600A6713E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8788A9B0213DC65600A6713E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8788A9B2213DC65600A6713E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8788A9B9213DD27100A6713E /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
+		A2221171036A00A702DE0714 /* Pods-NewsAppChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsAppChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsAppChallenge/Pods-NewsAppChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		D79C5ADD400097176ABA6AE7 /* Pods_NewsAppChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsAppChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87BB1D40F7B635CA5DA1ED75 /* Pods_NewsAppChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7131CCE904B8F61DB88A3364 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D79C5ADD400097176ABA6AE7 /* Pods_NewsAppChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8788A99A213DC65400A6713E = {
 			isa = PBXGroup;
 			children = (
 				8788A9A5213DC65400A6713E /* NewsAppChallenge */,
 				8788A9A4213DC65400A6713E /* Products */,
+				DA396CCD5E518C779CD7D939 /* Pods */,
+				7131CCE904B8F61DB88A3364 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +71,7 @@
 		8788A9A5213DC65400A6713E /* NewsAppChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8788A9B8213DCC3C00A6713E /* Controller */,
 				8788A9A6213DC65400A6713E /* AppDelegate.swift */,
 				8788A9A8213DC65400A6713E /* ViewController.swift */,
 				8788A9AA213DC65400A6713E /* Main.storyboard */,
@@ -64,6 +82,23 @@
 			path = NewsAppChallenge;
 			sourceTree = "<group>";
 		};
+		8788A9B8213DCC3C00A6713E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8788A9B9213DD27100A6713E /* NewsFeedViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		DA396CCD5E518C779CD7D939 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2221171036A00A702DE0714 /* Pods-NewsAppChallenge.debug.xcconfig */,
+				49B0B54FD9307F7B1F0DC722 /* Pods-NewsAppChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +106,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8788A9B5213DC65600A6713E /* Build configuration list for PBXNativeTarget "NewsAppChallenge" */;
 			buildPhases = (
+				FE0D12C71FF0CE15C5EEC4E1 /* [CP] Check Pods Manifest.lock */,
 				8788A99F213DC65400A6713E /* Sources */,
 				8788A9A0213DC65400A6713E /* Frameworks */,
 				8788A9A1213DC65400A6713E /* Resources */,
+				15283F7E221C33E7EE4E25C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,11 +167,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15283F7E221C33E7EE4E25C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NewsAppChallenge/Pods-NewsAppChallenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewsAppChallenge/Pods-NewsAppChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE0D12C71FF0CE15C5EEC4E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewsAppChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8788A99F213DC65400A6713E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8788A9BA213DD27100A6713E /* NewsFeedViewController.swift in Sources */,
 				8788A9A9213DC65400A6713E /* ViewController.swift in Sources */,
 				8788A9A7213DC65400A6713E /* AppDelegate.swift in Sources */,
 			);
@@ -278,6 +365,7 @@
 		};
 		8788A9B6213DC65600A6713E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2221171036A00A702DE0714 /* Pods-NewsAppChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +383,7 @@
 		};
 		8788A9B7213DC65600A6713E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49B0B54FD9307F7B1F0DC722 /* Pods-NewsAppChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
