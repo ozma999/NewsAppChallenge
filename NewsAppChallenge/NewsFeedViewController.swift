@@ -10,6 +10,7 @@ import AlamofireObjectMapper
 import Foundation
 import UIKit
 import SDWebImage
+import Spring
 
 class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!{
@@ -17,10 +18,12 @@ class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
             scrollView.delegate = self
         }
     }
+    var scrollViewDelegate:UIScrollViewDelegate?
     var newsData:NewsDataModel?
     let url:String = "https://newsapi.org/v2/top-headlines?q=games&apiKey=60e10b1325f34ed383ba7da9359cdaa7"
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollViewDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
         getNewsData(url: url){ (articles:[Article]) in
             DispatchQueue.main.async {
@@ -35,6 +38,14 @@ class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let page = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        
+//        self.view.animate()
+
+    }
+    
     
     func getNewsData(url: String,completion: @escaping ([Article]) -> Void) {
         
@@ -78,7 +89,9 @@ class NewsFeedViewController: UIViewController,UIScrollViewDelegate {
             let slide:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
             slide.backgroundColor = UIColor(red:0.09, green:0.10, blue:0.05, alpha:1.0)
             slide.headerImage.sd_setImage(with: URL(string:news[i].urlToImage! ), placeholderImage: UIImage(named: "placeholder.png"))
-                         slide.titleLabel.text = news[i].title
+//            slide.headerImage.contentMode = UIViewContentMode.scaleAspectFit && UIViewContentMode.center
+            slide.clipsToBounds=true
+            slide.titleLabel.text = news[i].title
             slide.titleLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             slide.dateLabel.text =  news[i].publishedAt!
             slide.sourceLabel.text =  news[i].source?.name
