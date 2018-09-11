@@ -12,5 +12,6 @@ target 'NewsAppChallenge' do
   pod  'ObjectMapper'
   pod 'SDWebImage'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'RAMAnimatedTabBarController'
 
 end
